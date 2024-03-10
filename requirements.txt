@@ -1,12 +1,10 @@
 opencv-python
 wheel
-Cmake
 numpy
 pandas
 streamlit
 av
 datetime
-dlib==19.22.0; sys_platform == 'linux' and platform_machine == 'x86_64'
-dlib==19.22.0; sys_platform == 'darwin'
+dlib-binary
 face_recognition
 face_recognition_models
