@@ -109,7 +109,8 @@ def mark_attendance(jam_masuk, jam_pulang):
 
 # Fungsi main
 def main():
-    st.title("Presensi Menggunakan Face Recognition")
+    st.title("ABSENSI")
+    st.image("logokens.png", caption="The Kensington Royal Suites")
     st.write("Tekan tombol di bawah untuk memulai presensi")
 
     jam_masuk = datetime.now().strftime('%H:%M:%S')
