@@ -5,6 +5,4 @@ pandas
 streamlit
 av
 datetime
-dlib-bin
 face_recognition
-face_recognition_models
