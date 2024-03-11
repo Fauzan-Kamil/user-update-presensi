@@ -1,9 +1,9 @@
-wheel
+streamlit
+streamlit-option-menu
 numpy
 pandas
-plotly
-opencv-contrib-python
-cmake
-dlib
-face_recognition
-streamlit
+wordcloud
+matplotlib
+plotly-express
+pybase64
+pillow
