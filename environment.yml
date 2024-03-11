@@ -1,14 +1,13 @@
-name: dlib
-channels:
-  - conda-forge
+name: environment.yml
+
 dependencies:
-  - streamlit >= 0.73
-  - dlib
-  - opencv
-  - wheel
-  - numpy
-  - pandas
-  - streamlit
-  - datetime
-  - face_recognition
-  - face-recognition-models
+cmake==3.22.4
+dlib==19.24.0
+opencv-python==4.6.0.66
+face-recognition==1.3.0
+Pillow==9.2.0
+requests==2.27.1
+streamlit==1.10.0
+streamlit-lottie==0.0.3
+streamlit-option-menu==0.3.2
+numpy==1.22.4
