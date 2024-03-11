@@ -1,8 +1,7 @@
-opencv-python
 wheel
 numpy
 pandas
-streamlit
+streamlit==1.4.0
 av
 datetime
 face_recognition
