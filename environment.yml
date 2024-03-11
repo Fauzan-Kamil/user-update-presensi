@@ -4,8 +4,6 @@ channels:
 dependencies:
   - streamlit >= 0.73
   - dlib
-  - cmake==3.21.1
-  - dlib
   - opencv
   - wheel
   - numpy
