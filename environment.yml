@@ -1,8 +1,9 @@
-name: cartoonify
+name: dlib
 channels:
   - conda-forge
 dependencies:
-  - python==3.8
+  - streamlit >= 0.73
+  - dlib
   - cmake==3.21.1
   - dlib
   - opencv
