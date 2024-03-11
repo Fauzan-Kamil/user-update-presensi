@@ -2,9 +2,8 @@ wheel
 numpy
 pandas
 streamlit
-av
 datetime
 opencv-python-headless==4.5.4.60
 opencv-contrib-python-headless==4.5.4.60
 face_recognition
-dlib-bin
+face-recognition-models
