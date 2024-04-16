@@ -4,4 +4,4 @@ streamlit
 datetime
 opencv-python
 face_recognition
-face-recognition-models
+
