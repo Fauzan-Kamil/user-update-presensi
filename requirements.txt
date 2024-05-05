@@ -2,7 +2,7 @@ numpy
 pandas
 streamlit
 datetime
+cmake
+dlib
 opencv-python
 face_recognition
-dlib
-cmake
