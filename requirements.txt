@@ -4,4 +4,5 @@ streamlit
 datetime
 opencv-python
 face_recognition
-
+dlib
+cmake
