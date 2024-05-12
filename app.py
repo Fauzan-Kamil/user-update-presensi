@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 import pandas as pd
 import streamlit as st
+st.set_page_config(page_title="User Absensi")
 
 # Fungsi untuk memuat data wajah
 def load_face_data(data_path):
@@ -107,7 +108,6 @@ def mark_attendance(jam_masuk, jam_pulang):
     else:
         st.write("Absen Gagal")
 
-# Fungsi main
 def main():
     st.title("ABSENSI")
     st.image("logokens.png", caption="The Kensington Royal Suites")
@@ -115,12 +115,43 @@ def main():
 
     jam_masuk = datetime.now().strftime('%H:%M:%S')
     jam_pulang = datetime.now().strftime('%H:%M:%S')
+    
+    # Define custom CSS for button colors
+    button1_style = """
+        <style>
+            #button1 {
+                color: white;
+                background-color: #00FF00;
+                border-color: #00FF00;
+            }
+        </style>
+    """
+    button2_style = """
+        <style>
+            #button2 {
+                color: white;
+                background-color: #FF0000;
+                border-color: #FF0000;
+            }
+        </style>
+    """
 
-    if st.button("Masuk"):
+    # Display custom CSS for button colors
+    st.markdown(button1_style, unsafe_allow_html=True)
+    st.markdown(button2_style, unsafe_allow_html=True)
+
+    # Create buttons with st.button
+    button1_clicked = st.button("Masuk", key="button1", help="Klik untuk absen masuk")
+    button2_clicked = st.button("Pulang", key="button2", help="Klik untuk absen pulang")
+
+    if button1_clicked:
         mark_attendance(jam_masuk, None)
+        st.success("Anda telah berhasil melakukan absensi masuk.")
 
-    elif st.button("Pulang"):
+    elif button2_clicked:
         mark_attendance(None, jam_pulang)
+        st.error("Anda telah berhasil melakukan absensi pulang.")
+
 
 # Panggil fungsi main
 if __name__ == "__main__":
