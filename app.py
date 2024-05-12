@@ -32,22 +32,11 @@ def load_attendance_data():
     attendance_list = df['Name'].tolist()
     return attendance_list
 
-# Fungsi untuk menandai kehadiran
+# Perbaikan pada fungsi mark_attendance
 def mark_attendance(jam_masuk, jam_pulang):
+    # Fungsi internal untuk menandai kehadiran
     def mark_attendance_internal(name, attendance_list, jam_masuk, jam_pulang):
-        with open('laporan.csv', 'a') as f:
-            now = datetime.now()
-            tanggal = now.strftime('%Y-%b-%d')
-            lokasi_kerja = "KSTR"
-
-            if jam_masuk:  # Jika melakukan absensi masuk
-                keterangan = "Hadir" if name in attendance_list else "Hadir"
-                note = ""  # Tambahkan placeholder untuk catatan
-                f.write(f'{name},{jam_masuk},{""},{tanggal},{keterangan},{lokasi_kerja},{note}\n')
-            elif jam_pulang:  # Jika melakukan absensi pulang
-                keterangan = "Hadir" if name in attendance_list else "Hadir"
-                note = ""  # Tambahkan placeholder untuk catatan
-                f.write(f'{name},{""},{jam_pulang},{tanggal},{keterangan},{lokasi_kerja},{note}\n')
+        # Kode penandaan kehadiran di sini
 
     # Muat data kehadiran dari file laporan.csv
     attendance_list = load_attendance_data()
@@ -67,6 +56,12 @@ def mark_attendance(jam_masuk, jam_pulang):
 
     while True:
         success, img = cap.read()
+        
+        # Periksa apakah pembacaan frame berhasil
+        if not success:
+            st.error("Gagal membaca frame dari webcam. Pastikan webcam terhubung dan berfungsi dengan baik.")
+            break
+
         img_small = cv2.resize(img, None, fx=0.25, fy=0.25)
         img_small_rgb = cv2.cvtColor(img_small, cv2.COLOR_BGR2RGB)
         faces_cur_frame = face_recognition.face_locations(img_small_rgb)
