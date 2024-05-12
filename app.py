@@ -67,7 +67,7 @@ def mark_attendance(jam_masuk, jam_pulang):
 
     while True:
         success, img = cap.read()
-        img_small = cv2.resize(img, (0, 0), None, 0.25, 0.25)
+        img_small = cv2.resize(img, None, fx=0.25, fy=0.25)
         img_small_rgb = cv2.cvtColor(img_small, cv2.COLOR_BGR2RGB)
         faces_cur_frame = face_recognition.face_locations(img_small_rgb)
         encode_cur_frame = face_recognition.face_encodings(img_small_rgb, faces_cur_frame)
