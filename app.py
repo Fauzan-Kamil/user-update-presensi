@@ -32,11 +32,22 @@ def load_attendance_data():
     attendance_list = df['Name'].tolist()
     return attendance_list
 
-# Perbaikan pada fungsi mark_attendance
+# Fungsi untuk menandai kehadiran
 def mark_attendance(jam_masuk, jam_pulang):
-    # Fungsi internal untuk menandai kehadiran
     def mark_attendance_internal(name, attendance_list, jam_masuk, jam_pulang):
-        # Kode penandaan kehadiran di sini
+        with open('laporan.csv', 'a') as f:
+            now = datetime.now()
+            tanggal = now.strftime('%Y-%b-%d')
+            lokasi_kerja = "KSTR"
+
+            if jam_masuk:  # Jika melakukan absensi masuk
+                keterangan = "Hadir" if name in attendance_list else "Hadir"
+                note = ""  # Tambahkan placeholder untuk catatan
+                f.write(f'{name},{jam_masuk},{""},{tanggal},{keterangan},{lokasi_kerja},{note}\n')
+            elif jam_pulang:  # Jika melakukan absensi pulang
+                keterangan = "Hadir" if name in attendance_list else "Hadir"
+                note = ""  # Tambahkan placeholder untuk catatan
+                f.write(f'{name},{""},{jam_pulang},{tanggal},{keterangan},{lokasi_kerja},{note}\n')
 
     # Muat data kehadiran dari file laporan.csv
     attendance_list = load_attendance_data()
