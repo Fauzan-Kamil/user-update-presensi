@@ -2,6 +2,7 @@ import cv2
 import face_recognition
 import numpy as np
 import os
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 from datetime import datetime
 import pandas as pd
 import streamlit as st
